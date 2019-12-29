@@ -2,12 +2,34 @@
 
 /*# sourceMappingURL=style.css.map */
 
+$black: #000000;
+$white: #ffffff;
+$blue: #025EA4;
+$red: #E91D30;
+$grey: #7E8083;
+$border-color: "";
+$text-color: "";
+$bg-color: "";
+$flex: ();
+
+@mixin button-color($bg-color, $text-color, $border-color){
+    background-color: $bg-color;
+    color: $text-color;
+    border: 1px solid $border-color;
+    box-sizing: border-box;
+}
+
+@mixin flex(){
+    
+}
+
 html, body, p, div, header, footer, ul{
 	display: block;
 	padding: 0;
 	margin: 0;
 	outline: 0;
 }
+
 img{
 	max-width: 100%;
 	vertical-align: bottom;
@@ -19,17 +41,28 @@ body{
 	width: 100%;
 	max-width: 100%;
 }
-/*
-ÐÐ°Ð²Ð±Ð°Ñ€
-*/
+.white-blue a {
+    @include button-color(transparent, $blue, $blue);
+}
+.white-white a {
+    @include button-color(transparent, $white, $white);
+}
+.blue-white a {
+    @include button-color($blue, $white, $blue);
+}
+.red-white a {
+    @include button-color($red, $white, $red);
+}
+.white-red a {
+    @include button-color(transparent, $red, $red);
+}
 .nav{
 	border-bottom: 1px solid #D5D5D5;
 }
 .column12{
-	max-width: 1220px;
+	max-width: 1200px;
 	width: 100%;
 	margin: 0 auto;
-	padding: 0 10px;
 	box-sizing: border-box;
 }
 .navbar{
@@ -92,35 +125,29 @@ a{
 	top: 3px;
 	position: absolute;
 	left: -3px;
-}
-}
-}
-}
-}
+}}}}}
 
-ul.header_menu li {
+.header_menu {
+li {
     list-style: none;
     display: inline-block;
 }
-
-ul.header_menu a {
+a {
     text-decoration: none;
     font-size: 14px;
     line-height: 17px;
     color: #025EA4;
     margin-left: 15px;
     font-weight: bold;
-}
-.menu.logo .logo{
+}}
+
+.menu.logo{
+.logo{
 	margin-right: 20px;
 }
-.menu.logo a {
+a {
     display: inline-block;
-}
-
-ul.header_menu {
-    display: inline-block;
-}
+}}
 
 .header {
     padding-top: 15px;
@@ -154,9 +181,8 @@ ul.header_menu {
 	flex-wrap: wrap;
 	align-items: center;
 }
-/*
-Ð‘Ð°Ð½Ð½ÐµÑ€
-*/
+
+
 .banner {
     position: relative;
     margin-bottom: 30px;
@@ -173,79 +199,68 @@ ul.header_menu {
     color: #025EA4;
 }
 
-.title_72 {
+.text_72 {
     font-size: 72px;
     letter-spacing: 0.04em;
     font-weight: 600;
 }
 
-.title_40 {
+.text_40 {
     font-weight: 600;
     font-size: 40px;
 }
-.title_48 {
+.text_48 {
     font-size: 48px;
 }
-.title_36 {
+.text_36 {
     font-size: 36px;
 }
 
-.banner_text .column div {
-    font-size: 18px;
-}
-
-.banner_text .column {
+.banner_text {
+.column {
     display: inline-block;
     margin-right: 35px;
-}
-
-.banner_text .column_3 {
+.column div {
+    font-size: 18px;
+}}
+.column_3 {
 	margin-top: 20px;
 	margin-bottom: 30px;
-}
-.red-white a {
-    background: #E91D30;
-    color: white;   
-}
+}}
+
+
 .button{
 	display: inline-block;
-}
-.button a{
+a{
 	font-size: 14px;
 	font-weight: bold;
 	border-radius: 4px;
 	padding: 13px 35px;
 	text-decoration: none;
 	display: inline-block;
-}
-.white-blue a {
-    border: 1px solid #025EA4;
-    color: #025EA4;
-}
-.title-button h2 {
-    color: #025EA4;
-}
+}}
 
 .title-button {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-}
-.block2 li {
-    list-style: none;
-    position: relative;
-    min-width: 285px;
-}
+.title-button h2 {
+    color: #025EA4;
+}}
 
 .block2 {
     display: flex;
     justify-content: space-between;
     position: relative;
     margin-bottom: 20px;
-}
 
-.block2 .row-block2 {
+li {
+    list-style: none;
+    position: relative;
+    min-width: 285px;
+}
+.row-block2 {
     position: absolute;
     top: 0;
     left: 0;
@@ -258,21 +273,47 @@ ul.header_menu {
     box-sizing: border-box;
     background: rgba(0, 0, 0, 0.25);
 }
-
-.block2 span {
+span {
     display: block;
     color: white;
 }
+&:before {
+    content: "";
+    width: 14px;
+    height: 100%;
+    position: absolute;
+    background: url(../img/vector4.jpg) no-repeat 0;
+    top: 0;
+    left: -40px;
+    z-index: 1;
+    display: block;
+}
+&:after {
+    content: "";
+    width: 14px;
+    height: 100%;
+    position: absolute;
+    background: url(../img/vector4.jpg) no-repeat 0;
+    top: 0;
+    right: -40px;
+    z-index: 1;
+    display: block;
+    transform: rotate(180deg);
+}}
+
 .country span {
     border: 1px solid #FFFFFF;
     border-radius: 30px;
+    display: inline-block;
+    padding: 7px 15px;
+    margin-bottom: 10px;
 }
 
 .block2-text {
     font-weight: bold;
 }
 
-.block2-text .title_36 {
+.block2-text .text_36 {
     margin-bottom: 45px;
 }
 
@@ -280,38 +321,10 @@ ul.header_menu {
     margin-top: 25px;
 }
 
-.block2-text .title_24 {
+.block2-text .text_24 {
     line-height: 24px;
 }
-.country span {
-    display: inline-block;
-    padding: 7px 15px;
-    margin-bottom: 10px;
-}
 
-.block2:before {
-	content: "";
-	width: 14px;
-	height: 100%;
-	position: absolute;
-	background: url(../img/vector4.jpg) no-repeat 0;
-	top: 0;
-	left: -40px;
-	z-index: 1;
-	display: block;
-}
-.block2:after {
-	content: "";
-	width: 14px;
-	height: 100%;
-	position: absolute;
-	background: url(../img/vector4.jpg) no-repeat 0;
-	top: 0;
-	right: -40px;
-	z-index: 1;
-	display: block;
-	transform: rotate(180deg);
-}
 .block-search{
     position: relative;
 }
@@ -339,10 +352,10 @@ ul.header_menu {
     content: "";
     z-index: 1;
 }
+
 .block3 li {
     list-style: none;
 }
-
 .block3 a {
     text-decoration: none;
     font-size: 18px;
@@ -364,7 +377,7 @@ ul.header_menu {
     min-width: 225px;
     width: 25%;
 }
-.title_96 {
+.text_96 {
     font-size: 96px;
 }
 
@@ -383,10 +396,7 @@ ul.header_menu {
     justify-content: space-between;
 }
 
-.white-white a {
-    border: 1px solid white;
-    color: white;
-}
+
 
 .action .title-block {
     color: white;
@@ -394,7 +404,7 @@ ul.header_menu {
     align-items: center;
 }
 
-.action .title_36 {
+.action .text_36 {
     font-weight: bold;
 }
 .row-action .column12 {
@@ -407,7 +417,7 @@ ul.header_menu {
     margin-right: 15px;
 }
 
-.title_24 {
+.text_24 {
     font-size: 24px;
 }
 .block4 {
@@ -488,7 +498,7 @@ ul.header_menu {
     margin: 0 auto;
 }
 
-.column-3 .title_24 {
+.column-3 .text_24 {
 	color: #025EA4;
 	font-weight: bold;
 	margin-top: 55px;
@@ -529,11 +539,11 @@ ul.header_menu {
     text-align: center;
 }
 
-.missiya .column12 > div .title_36 {
+.missiya .column12 > div .text_36 {
     margin-bottom: 30px;
 }
 
-.missiya .column12 > div .title_24 {
+.missiya .column12 > div .text_24 {
     line-height: 36px;
 }
 .img_banner img {
@@ -548,7 +558,7 @@ ul.header_menu {
     visibility: hidden;
 }
 
-.action > div:first-child {
-    background-image: url(./img/bg-block.jpg);
+.action {
+    background-image: url(../img/bg-block.jpg);
     background-size: cover;
 }
